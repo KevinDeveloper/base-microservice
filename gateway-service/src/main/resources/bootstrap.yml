@@ -39,3 +39,7 @@ zuul:
       path: /blogapi/**
       serviceId: blog-service
       sensitiveHeaders: #设置敏感头信息为空
+#配置ribbon负载均衡
+ribbon:
+  eureka:
+    enabled: true # 默认值为true
