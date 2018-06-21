@@ -1,24 +1,4 @@
 server:
-  port: 5000
-spring:
-  application:
-    name: gateway-service
-#配置服务注册中心
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8760/eureka/
+  port: 5001
 
-zuul:
-  host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-  routes:
-    user-service:
-      path: /userapi/**
-      serviceId: user-service
-      sensitiveHeaders:
-    blog-service:
-      path: /blogapi/**
-      serviceId: blog-service
-      sensitiveHeaders:
+
