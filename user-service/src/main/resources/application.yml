@@ -3,10 +3,13 @@ server:
 spring:
   application:
     name: user-service
-
+  #配置Zipkin 服务调用链
+  zipkin:
+    base-url: http://localhost:9400
 #配置服务注册中心
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8760/eureka/
+
 

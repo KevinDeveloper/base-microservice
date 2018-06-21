@@ -1,6 +1,8 @@
 Eureka 服务发现使用说明
-文章包含两部分
-一、eureka-service 服务注册中心
+Eureka 分为Eureka Server 和 Eureka Client
+
+文章将分两部分进行讲解
+一、eureka-server 服务注册中心
 二、eureka-client 服务实例实现
 
 
@@ -25,7 +27,7 @@ eureka:
 
 3、开启服务注册功能
 在启动类上加上 @EnableEurekaServer 注解，开启EurekaServer的功能。
-
+访问http://localhost:8760/ 可查看当前所有注册的服务
 
 二、eureka-client 服务实例发现
 1、起步依赖
