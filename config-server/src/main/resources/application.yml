@@ -1,0 +1,19 @@
+spring:
+ application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+  profiles:
+     active: native
+
+# port
+server:
+  port: 8769
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8760/eureka/
