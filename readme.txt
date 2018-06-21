@@ -5,6 +5,7 @@
 日志服务：log-service
 鉴权和认证服务：uaa-service
 调用链服务：zipkin-service
+配置中心：config-server
 
 业务服务
 user-service

@@ -15,7 +15,12 @@ Spring Cloud Sleuth 集成Zipkin, Zipkin 分为Zipkin Server 和Zipkin Client
 			<artifactId>zipkin-autoconfigure-ui</artifactId>
 		</dependency>
 
-2、开启Zipkvin Server 功能
+2、配置文件
+spring:
+  application:
+    name: zipkin-service
+
+3、开启Zipkvin Server 功能
 启动类加上 @EnableZipkinServer 注解，开启Zipkin Server 功能
 
 二、Zipkin Client
@@ -26,10 +31,19 @@ Spring Cloud Sleuth 集成Zipkin, Zipkin 分为Zipkin Server 和Zipkin Client
 		</dependency>
 
 2、配置地址
+a、单个地址
 spring:
   zipkin:
     base-url: http://localhost:9400
 
+b、高可用配置，走服务发现
+spring:
+  zipkin:
+    base-url: http://zipkin-service/
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
 
 
 
