@@ -3,7 +3,7 @@ spring:
     name: eureka-server
 server:
   port: 8760
-
+#配置服务注册中心
 eureka:
   instance:
     hostname: localhost
