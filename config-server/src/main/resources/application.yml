@@ -1,18 +1,18 @@
 spring:
- application:
+  application:
     name: config-server
   cloud:
+    #配置配置服务，从本地仓库shared目录下读取配置文件
     config:
       server:
         native:
           search-locations: classpath:/shared
   profiles:
-     active: native
+    active: native
 
-# port
 server:
-  port: 8769
-
+  port: 8900
+#配置服务注册中心
 eureka:
   client:
     service-url:

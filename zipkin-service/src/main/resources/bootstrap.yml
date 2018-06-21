@@ -1,0 +1,38 @@
+server:
+  port: 9400
+spring:
+  application:
+    name: zipkin-service
+  cloud:
+    #设置配置中心地址
+    config:
+      #uri: http://localhost:8900 #单个地址配置
+      fail-fast: true
+      #从服务注册中心获取配置中心服务
+      discovery:
+        enabled: true
+        service-id: config-server
+  #设置加载配置文件类型
+  profiles:
+    active: pro
+
+#配置服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8760/eureka/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
