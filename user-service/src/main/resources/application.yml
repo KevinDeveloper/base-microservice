@@ -1,11 +1,22 @@
-server:
-  port: 8761
+
 spring:
-  application:
-    name: user-service
+  #配置数据库
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url:  jdbc:mysql://localhost:3306/spring_security?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   #配置Zipkin 服务调用链
   zipkin:
-    base-url: http://localhost:9400
+    base-url: http://zipkin-service/ #http://localhost:9400
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
 #配置服务注册中心
 eureka:
   client:
