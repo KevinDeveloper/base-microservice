@@ -20,15 +20,22 @@
 
 
 	<dependencies>
+		<!--引入turbine 聚合多个hystrix dashboard ，统一监控-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			<artifactId>spring-cloud-starter-turbine</artifactId>
 		</dependency>
+		<!--增加actuator控制器-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!--增加hystrix熔断器-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
-		<!--hystrix-dashboard-->
+		<!--增加hystrix dashboard 监控熔断器状态-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>

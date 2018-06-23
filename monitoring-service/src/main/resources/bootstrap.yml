@@ -1,16 +1,35 @@
 server:
-  port: 8766
+  port: 8700
+  context-path: /monitoring-service
 spring:
   application:
     name: monitoring-service
-#  cloud:
-#    config:
-#      uri: http://localhost:8769
-#      fail-fast: true
-#  profiles:
-#    active: pro
-
+    #设置配置中心地址
+  cloud:
+    #设置配置中心地址
+    config:
+      #uri: http://localhost:8900 #单个地址配置
+      fail-fast: true
+      #从服务注册中心获取配置中心服务
+      discovery:
+        enabled: true
+        service-id: config-server
+  #设置加载配置文件类型
+  profiles:
+    active: pro
+#配置turbine 统一监控服务的hystrix dashboard , 采用默认监控集群配置
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: user-service #, blog-service
+  clusterNameExpression: new String("default")
+  instanceUrlSuffix: /user-service/hystrix.stream # 当受监控的actutor 如user-service 设置了context-path 时，需要重新设置监控指标数据的地址
+#配置服务注册中心
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8760/eureka/
+
+security.basic.enabled: false
+
+
