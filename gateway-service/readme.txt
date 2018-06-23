@@ -15,7 +15,7 @@ zuul:
     connect-timeout-millis: 20000 #连接超时
     socket-timeout-millis: 20000 #socket连接时间
   #api版本
-  prefix: /v1
+  prefix: /v1  #可选
   #配置路由功能
   routes:
     user-service:
@@ -28,6 +28,9 @@ zuul:
       sensitiveHeaders: #设置敏感头信息为空
 
 3、启动类加上 @EnableZuulProxy 注解，启动Zunl网关代理功能
+
+4、网关代理：
+通过网关地址：http://localhost:5000/v1/userapi/** 访问具体的服务接口
 
 备注：
 1、Zuul 作为Netflix 组件，可以与ribbon, eureka, hystrix等组件结合，实现了负载均衡、熔断器功能。

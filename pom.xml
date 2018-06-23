@@ -17,8 +17,10 @@
         <module>log-service</module>
         <module>common-support</module>
 
-        <!--<module>user-service</module>-->
-        <!--<module>blog-service</module>-->
+        <module>user-service</module>
+        <module>blog-service</module>
+
+
     </modules>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -39,17 +41,17 @@
     </properties>
 
     <dependencies>
-        <!--eureka client-->
+        <!--eureka feign-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
-        <!--config client-->
+        <!--config feign-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-        <!--zipkin client-->
+        <!--zipkin feign-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
@@ -63,6 +65,12 @@
         <dependency>
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
+        </dependency>
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
         </dependency>
     </dependencies>
 

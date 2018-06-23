@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  context-path: /user-service
+spring:
+  application:
+    name: user-service
+  cloud:
+    #设置配置中心地址
+    config:
+      #uri: http://localhost:8900 #单个地址配置
+      fail-fast: true
+      #从服务注册中心获取配置中心服务
+      discovery:
+        enabled: true
+        service-id: config-server
+  #设置加载配置文件类型
+  profiles:
+    active: pro
+  #配置Zipkin 服务调用链
+  zipkin:
+    base-url: http://zipkin-service/ #http://localhost:9400
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
+#配置服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8760/eureka/
+
+#feign服务调用时开启hystrix熔断器
+feign:
+  hystrix:
+    enabled: true
+
