@@ -24,6 +24,7 @@ turbine:
   appConfig: user-service #, blog-service
   clusterNameExpression: new String("default")
   instanceUrlSuffix: /user-service/hystrix.stream # 当受监控的actutor 如user-service 设置了context-path 时，需要重新设置监控指标数据的地址
+
 #配置服务注册中心
 eureka:
   client:
@@ -31,5 +32,10 @@ eureka:
       defaultZone: http://localhost:8760/eureka/
 
 security.basic.enabled: false
+logging:
+  file: "logs/monitoring-service.log"
+
+
+
 
 

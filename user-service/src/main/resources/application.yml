@@ -23,4 +23,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:8760/eureka/
 
+logging:
+  file: "logs/user-service.log"
+
 

@@ -1,0 +1,59 @@
+server:
+  port: 9998
+  context-path: /admin-service
+spring:
+  application:
+    name: admin-service
+  #配置admin server
+  boot:
+    admin:
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,activiti
+      #admin server 集成turbine
+      trubine:
+        clusters: default
+        location: monitoring-service
+  #设置配置中心地址
+  cloud:
+    #设置配置中心地址
+    config:
+      #uri: http://localhost:8900 #单个地址配置
+      fail-fast: true
+      #从服务注册中心获取配置中心服务
+      discovery:
+        enabled: true
+        service-id: config-server
+  #设置加载配置文件类型
+  profiles:
+    active: pro
+
+
+#配置服务注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8760/eureka/
+  instance:
+    metadata-map:
+      user.name: admin
+      user.password: 123456
+management:
+  security:
+    enabled: false #关闭actuator 模块的安全验证
+  user:
+    name: admin
+    password: 123456
+
+logging:
+  file: "logs/admin-service.log"  #日志输出路径
+
+
+
+
+
+
+
+
+
+
+
