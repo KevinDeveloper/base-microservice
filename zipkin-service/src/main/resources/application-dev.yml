@@ -1,7 +1,7 @@
 server:
-  port: 9403
+  port: 9400
 #配置服务注册中心
 eureka:
   client:
     service-url:
-      defaultZone: http://172.16.20.138:8760/eureka/
+      defaultZone: http://localhost:8760/eureka/

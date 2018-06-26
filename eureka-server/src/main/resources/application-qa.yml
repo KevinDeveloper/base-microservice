@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 8760
+#配置服务注册中心
+eureka:
+  instance:
+    hostname: 172.16.20.138
+    # 将Instance ID设置成IP:端口的形式
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  server:
+       enable-self-preservation: false #关闭保护模式
+       eviction-interval-timer-in-ms: 4000 #清理时间间隔
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

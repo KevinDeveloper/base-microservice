@@ -1,5 +1,5 @@
 server:
-  port: 9403
+  port: 9400
 #配置服务注册中心
 eureka:
   client:
