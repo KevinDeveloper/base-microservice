@@ -13,7 +13,7 @@ Turbine聚合监控服务monitoring-service、
 链路追踪服务zipkin-service、
 聚合监控服务admin-service、
 路由网关服务gateway-service、
-日志服务log-servic、
+日志服务log-service、
 基本工具包common-support
 
 sql文件夹存入数据库使用到的sql脚本。
@@ -26,7 +26,7 @@ Spring Cloud OAuth2 包括SpringOAuth2 和SpringBootSecurit，结合JWT 为微�
 Feign   声明式服务调用，用于消费服务
 Ribbon 负载均衡
 Hystrix 熔断器
-Hystrix Dashboard 熔断器仪盘盘，用户监控熔断器的状况
+Hystrix Dashboard 熔断器仪表盘，用户监控熔断器的状况
 Turbine 聚合多个Hystrix Dashboard
 Spring Cloud Sleuth 集成Zipkin, 用于服务链路追踪
 Spring Boot Admin 聚合监控服务的状况
@@ -55,19 +55,21 @@ user-service
 blog-service
 
 四、各个说明文档：
+[Eureka服务注册和发现](https://github.com/KevinDeveloper/microservicebase/blob/master/eureka-server/readme.txt)
+[Spring Cloud Config 分布式服务配置中心](https://github.com/KevinDeveloper/microservicebase/blob/master/config-server/readme.txt)
+[Zuul服务网关，用于服务智能路由、负载均衡](https://github.com/KevinDeveloper/microservicebase/blob/master/gateway-service/readme.txt)
 
-
-
-
-
-
-
-
-
-
-
-
-
+[授权中心Uaa服务uaa-service](https://github.com/KevinDeveloper/microservicebase/blob/master/uaa-service/readme.txt)
+[user-service集成Uaa服务](https://github.com/KevinDeveloper/microservicebase/blob/master/user-service/readme-uaa-service.txt)
+[链路追踪服务zipkin-service](https://github.com/KevinDeveloper/microservicebase/blob/master/zipkin-service/readme.txt)
+[Feign   声明式服务调用，用于消费服务](https://github.com/KevinDeveloper/microservicebase/blob/master/user-service/readme-feign.txt)
+[Hystrix 熔断器](https://github.com/KevinDeveloper/microservicebase/blob/master/user-service/readme-hystrix.txt
+)
+[Hystrix Dashboard 熔断器仪盘盘，用户监控熔断器的状况](https://github.com/KevinDeveloper/microservicebase/blob/master/user-service/readme-hystrix%20dashboard.txt)
+[monitoring-service Turbine 聚合多个Hystrix Dashboard](https://github.com/KevinDeveloper/microservicebase/blob/master/monitoring-service/readme.txt)
+[Swagger2 ApI接口文档组件](https://github.com/KevinDeveloper/microservicebase/blob/master/user-service/readme-swagger.txt)
+[聚合监控服务admin-service](https://github.com/KevinDeveloper/microservicebase/blob/master/admin-service/readme.txt)
+[日志服务log-service](https://github.com/KevinDeveloper/microservicebase/blob/master/log-service/readme.txt)
 
 
 

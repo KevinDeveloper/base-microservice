@@ -45,7 +45,7 @@ Ribbon 负载均衡
 
 Hystrix 熔断器
 
-Hystrix Dashboard 熔断器仪盘盘，用户监控熔断器的状况
+Hystrix Dashboard 熔断器仪表盘，用户监控熔断器的状况
 
 Turbine 聚合多个Hystrix Dashboard
 
@@ -65,6 +65,7 @@ RabbitMQ    消息服务器，用于发送日志消息。
 
 
 三、项目详情说明
+
 1、需要注册Eureka 的服务有：
 eureka-server port:8760
 基础服务有：
