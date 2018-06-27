@@ -1,0 +1,38 @@
+server:
+  port: 9997
+  context-path: /log-service
+spring:
+  application:
+    name: log-service
+  #配置 rabbitmq
+  rabbitmq:
+      host: 172.16.20.139
+      port: 5672
+      username: root
+      password: admin
+      publisher-confirms: true
+      virtual-host: /
+#  cloud:
+#    #设置配置中心地址
+#    config:
+#      #uri: http://localhost:8900 #单个地址配置
+#      fail-fast: true
+#      #从服务注册中心获取配置中心服务
+#      discovery:
+#        enabled: true
+#        service-id: config-server
+#  #设置加载配置文件类型
+#  profiles:
+#    active: pro
+  #配置Zipkin 服务调用链
+  zipkin:
+    base-url: http://zipkin-service/ #http://localhost:9400
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
+#配置服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.16.20.138:8760/eureka/
