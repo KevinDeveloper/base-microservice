@@ -1,5 +1,6 @@
 package com.kevin.microservicebase.userservice.controller;
 
+import com.kevin.microservicebase.commonsupport.annotation.SysLogger;
 import com.kevin.microservicebase.commonsupport.dto.RespDTO;
 import com.kevin.microservicebase.commonsupport.util.BPwdEncoderUtil;
 import com.kevin.microservicebase.userservice.entity.LoginDTO;
@@ -38,6 +39,7 @@ public class UserController {
 
     @ApiOperation(value = "注册", notes = "username和password为必选项")
     @PostMapping("/registry")
+    @SysLogger("registry")
     public RespDTO createUser(@RequestBody User user) {
         //参数判读省略,判读该用户在数据库是否已经存在省略
         String entryPassword = BPwdEncoderUtil.BCryptPassword(user.getPassword());
@@ -47,6 +49,7 @@ public class UserController {
 
     @ApiOperation(value = "登录", notes = "username和password为必选项")
     @PostMapping("/login")
+    @SysLogger("login")
     public RespDTO login(@RequestParam String username, @RequestParam String password) {
         //参数判读省略
         LoginDTO loginDTO= userService.login(username, password);
@@ -55,6 +58,7 @@ public class UserController {
 
     @ApiOperation(value = "根据用户名获取用户", notes = "根据用户名获取用户")
     @RequestMapping(value = "/userinfo/{username}", method = RequestMethod.GET)
+    @SysLogger("userinfo")
     public RespDTO getUserInfo(@PathVariable("username") String username) {
         //参数判读省略
         User user = userService.getUserInfo(username);
@@ -64,6 +68,7 @@ public class UserController {
 
     @ApiOperation(value = "test feign", notes = "test feign")
     @PostMapping("/test/testFeign")
+    @SysLogger("/test/testFeign")
     public RespDTO testFeign(@RequestParam String username, @RequestParam String password) {
         //参数判读省略
         String enAuth = new String(Base64.getEncoder().encode("uaa-service:123456".getBytes()));
