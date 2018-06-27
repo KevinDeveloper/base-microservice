@@ -147,3 +147,18 @@ CREATE TABLE `user_role` (
   CONSTRAINT `FK859n2jvi8ivhui0rl0esws6o` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `FKa68196081fvovjhkek5m97n3y` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for sys_log
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_log`;
+CREATE TABLE `sys_log` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `create_date` datetime DEFAULT NULL,
+  `ip` varchar(255) DEFAULT NULL,
+  `method` varchar(255) DEFAULT NULL,
+  `operation` varchar(255) DEFAULT NULL,
+  `params` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=267 DEFAULT CHARSET=utf8;
