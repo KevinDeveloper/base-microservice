@@ -1,6 +1,7 @@
 package com.kevin.microservicebase.userservice.service;
 
 import com.kevin.microservicebase.commonsupport.dto.RespDTO;
+import com.kevin.microservicebase.userservice.entity.LoginDTO;
 import com.kevin.microservicebase.userservice.entity.User;
 
 /**
@@ -30,5 +31,5 @@ public interface UserService {
      * @param password
      * @return
      */
-    RespDTO login(String username , String password);
+    LoginDTO login(String username , String password);
 }

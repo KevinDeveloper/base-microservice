@@ -2,9 +2,9 @@ spring:
   #配置数据库
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url:  jdbc:mysql://localhost:3306/spring_security?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
-    username: root
-    password: root
+    url:  jdbc:mysql://172.16.20.138:3306/spring_security?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+    username: opzoon
+    password: 123.com
   jpa:
     hibernate:
       ddl-auto: update
@@ -12,6 +12,5 @@ spring:
 management:
   security:
     enabled: false
-
 
 

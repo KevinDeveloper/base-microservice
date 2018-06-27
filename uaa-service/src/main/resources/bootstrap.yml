@@ -1,9 +1,8 @@
 server:
-  port: 8080
-  context-path: /user-service
+  port: 9999
 spring:
   application:
-    name: user-service
+    name: uaa-service
   cloud:
     #设置配置中心地址
     config:
@@ -28,9 +27,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://172.16.20.138:8760/eureka/
-
-#feign服务调用时开启hystrix熔断器
-feign:
-  hystrix:
-    enabled: true
-

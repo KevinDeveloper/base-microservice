@@ -52,8 +52,8 @@ public class Swagger2 {
 
     private List<ApiKey> securitySchemes() {
         return Lists.newArrayList(
-                new ApiKey("Authorization", "param", "header"),
-                new ApiKey("ApiAuth", "sn", "header"));
+                new ApiKey("Authorization", "access_token", "header"),
+                new ApiKey("ApiAuth", "access_token", "header"));
     }
 
     private List<SecurityContext> securityContexts() {
